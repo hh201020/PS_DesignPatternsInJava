@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbSingleton {
-	
+
+//	private static DbSingleton instance = new DbSingleton();   // Eagerly loaded, not a good way for performance, so we need to lazily load it
 	private static DbSingleton instance = null;
 	private Connection conn = null;
 
@@ -22,7 +23,7 @@ public class DbSingleton {
 
 		if (instance == null) {		// make sure to go to synchronized only the first time
 			synchronized (DbSingleton.class) {
-				if (instance == null) {
+				if (instance == null) {				// make sure there is no race condition
 					instance = new DbSingleton();
 				}
 			}

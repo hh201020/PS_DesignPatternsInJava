@@ -4,6 +4,7 @@ public class BuilderEverydayDemo {
 
 	public static void main(String args[]) {
 		
+		// a lot more performant than StringBuffer, which will slow down application by locking
 		StringBuilder builder = new StringBuilder();
 		
 		builder.append("This is an example ");

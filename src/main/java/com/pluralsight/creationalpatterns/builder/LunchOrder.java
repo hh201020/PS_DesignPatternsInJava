@@ -2,7 +2,7 @@ package com.pluralsight.creationalpatterns.builder;
 
 public class LunchOrder {
 
-	public static class Builder {
+	public static class Builder {		// can be a separate class and easily integrate with legacy code
 		private String bread;
 		private String condiments;
 		private String dressing;
@@ -18,7 +18,7 @@ public class LunchOrder {
 		
 		public Builder bread(String bread) {
 			this.bread = bread;
-			return this;
+			return this;				// Adding to the complexity is that people are typically not used to an object returning itself for each subsequent call
 		}
 		
 		public Builder condiments(String condiments) {
